@@ -1,6 +1,23 @@
+/* import React from "react";
+
+import BigNumber from "bignumber.js";
+
+type BigNumberInputProps = {
+  value: BigNumber;
+  setter: (value: BigNumber) => void;
+  adornment?: any;
+  disabled?: boolean;
+};
+
+
+
+export default BigNumberInput;
+ */
+
 import React from "react";
 
 import BigNumber from "bignumber.js";
+import { formatBN } from "../../utils/number";
 
 type BigNumberInputProps = {
   value: BigNumber;
@@ -18,8 +35,8 @@ function BigNumberInput({
   return (
     <>
       <input
-        type="number" /* 
-        adornmentPosition="end"
+        type="number"
+        /*   adornmentPosition="end"
         adornment={adornment}
         wide */
         value={value.isNegative() ? "" : value.toFixed()}

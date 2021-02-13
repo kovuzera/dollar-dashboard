@@ -21,6 +21,8 @@ import WithdrawDeposit from "./WithdrawDeposit";
 import BondUnbond from "./BondUnbond";
 import { getPoolAddress } from "../../utils/pool";
 import { DollarPool4 } from "../../constants/contracts";
+
+//Components
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 
