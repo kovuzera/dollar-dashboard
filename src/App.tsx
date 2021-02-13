@@ -10,6 +10,7 @@ import Container from "./components/Container";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/Home";
 import Wallet from "./pages/Wallet";
+import Footer from "./components/Footer";
 /* import NavBar from "./components/backup-components/NavBar";
 import HomePage from "./components/backup-components/HomePage";
 import Trade from "./components/Trade/index";
@@ -170,7 +171,7 @@ function App() {
           <div style={{ height: "128px", width: "100%" }} />
           <Footer hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme} />
         </Main> */}
-        <h1>oi bb</h1>
+        <Footer />
       </UseWalletProvider>
     </Router>
   );
