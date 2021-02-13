@@ -1,0 +1,8 @@
+.Row {
+  border: 1px solid var(--green);
+}
+
+.Row h2 {
+  border: 1px solid var(--green);
+  padding: 8px 12px;
+}

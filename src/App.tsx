@@ -9,6 +9,7 @@ import { storePreference, getPreference } from "./utils/storage";
 import Container from "./components/Container";
 import Navbar from "./components/Navbar";
 import HomePage from "./pages/Home";
+import Wallet from "./pages/Wallet";
 /* import NavBar from "./components/backup-components/NavBar";
 import HomePage from "./components/backup-components/HomePage";
 import Trade from "./components/Trade/index";
@@ -71,7 +72,45 @@ function App() {
         <>
           <Navbar></Navbar>
           <Container>
-            <HomePage user={user}></HomePage>
+            <>
+              <HomePage user={user}></HomePage>
+              <Switch>
+                <Route path="/dao/">
+                  <Wallet user={user} />
+                  {/*  <Route path="/dao/:override">
+                <Wallet user={user} />
+              </Route>
+                    
+              </Route>
+              <Route path="/epoch/">
+                <EpochDetail user={user} />
+              </Route>
+              <Route path="/coupons/:override">
+                <CouponMarket user={user} />
+              </Route>
+              <Route path="/coupons/">
+                <CouponMarket user={user} />
+              </Route>
+              <Route path="/governance/candidate/:candidate">
+                <Candidate user={user} />
+              </Route>
+              <Route path="/governance/">
+                <Governance user={user} />
+              </Route>
+              <Route path="/trade/">
+                <Trade user={user} />
+              </Route>
+              <Route path="/regulation/">
+                <Regulation user={user} />
+              </Route>
+              <Route path="/pool/:override">
+                <Pool user={user} />
+              </Route>
+              <Route path="/pool/">
+                <Pool user={user} />*/}
+                </Route>
+              </Switch>
+            </>
           </Container>
         </>
         {/*   <Main
