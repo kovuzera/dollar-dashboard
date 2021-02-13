@@ -26,6 +26,7 @@ import HomePageNoWeb3 from "./components/backup-components/HomePageNoWeb3"; */
 import HomePage from "./pages/Home";
 import Wallet from "./pages/Wallet";
 import Pool from "./pages/Pool";
+import EpochDetail from "./pages/EpochDetail";
 
 function App() {
   const storedTheme = getPreference("theme", "light");
@@ -85,10 +86,10 @@ function App() {
                 <Route path="/dao/">
                   <Wallet user={user} />
                 </Route>
-                {/*          <Route path="/epoch/">
+                <Route path="/epoch/">
                   <EpochDetail user={user} />
                 </Route>
-                <Route path="/coupons/:override">
+                {/*    <Route path="/coupons/:override">
                   <CouponMarket user={user} />
                 </Route>
                 <Route path="/coupons/">
