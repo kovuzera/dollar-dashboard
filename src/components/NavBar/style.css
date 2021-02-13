@@ -1,0 +1,32 @@
+.Navbar {
+  border-bottom: 1px solid var(--green);
+  padding: 32px 96px;
+}
+
+.ascii-art {
+  display: block;
+  float: left;
+}
+
+ul.nav-itens {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.nav-itens li {
+  border: 1px solid;
+  border-color: var(--green);
+  padding: 5px 16px;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.nav-itens li a {
+  text-decoration: none;
+  color: var(--green);
+  font-size: 25px;
+}

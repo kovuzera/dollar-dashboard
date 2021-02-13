@@ -1,80 +1,40 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import * as React from "react";
 
-import { LinkBase, useTheme } from '@aragon/ui';
-import ConnectButton from './ConnectButton';
+import { Link } from "react-router-dom";
 
-type NavbarProps = {
-  hasWeb3: boolean;
-  user: string;
-  setUser: Function;
-};
+import "./style.css";
 
-function NavBar({ hasWeb3, user, setUser }: NavbarProps) {
-  const currentTheme = useTheme();
-  const logoUrl = `./logo/logo_${currentTheme._name === 'light' ? 'black' : 'white'}.svg`;
+export interface NavProps {}
 
+const Nav: React.SFC<NavProps> = () => {
   return (
-    <>
-      <div
-        style={{
-          borderTop: '1px solid ' + currentTheme.border,
-          backgroundColor: 'none',
-          textAlign: 'center',
-          height: '128px',
-          width: '100%',
-          fontSize: '14px',
-        }}
-      >
-        <div style={{ maxWidth: '1100px', marginLeft: 'auto', marginRight: 'auto' }}>
-          <div style={{ display: 'flex', paddingTop: '24px' }}>
-            <div style={{ width: '20%', textAlign: 'left' }}>
-              <NavLink to="/" component={LinkBase} style={{ marginRight: '16px', height: '40px' }}>
-                <img src={logoUrl} height="40px" alt="Empty Set Dollar" />
-              </NavLink>
-            </div>
-            <div style={{ width: '60%', textAlign: 'center' }}>
-              <LinkButton title="DAO" to="/dao/" />
-              <LinkButton title="Liquidity" to="/pool/" />
-              <LinkButton title="Regulation" to="/regulation/" />
-              <LinkButton title="Governance" to="/governance/" />
-              <LinkButton title="Trade" to="/trade/" />
-              <LinkButton title="Coupons" to="/coupons/" />
-            </div>
-            <div style={{ width: '20%', textAlign: 'right' }}>
-              <ConnectButton hasWeb3={hasWeb3} user={user} setUser={setUser} />
-            </div>
-          </div>
-        </div>
+    <div className="Navbar">
+      <div className="ascii-art">
+        <h3>control loop</h3>
       </div>
-    </>
-  );
-}
 
-type linkButtonProps = {
-  title: string;
-  to: string;
+      <ul className="nav-itens">
+        <li>
+          <Link to="/dao">DAO</Link>
+        </li>
+        <li>
+          <Link to="/pool">Lp Rewards</Link>
+        </li>
+        <li>
+          <Link to="/regulation">Regulation</Link>
+        </li>
+        <li>
+          <Link to="/governance">Governance</Link>
+        </li>
+        <li>
+          <Link to="/trade">Trade</Link>
+        </li>
+        <li>
+          <Link to="/coupons">Coupons</Link>
+        </li>
+      </ul>
+    </div>
+  );
 };
 
-function LinkButton({ title, to }: linkButtonProps) {
-  return (
-    <NavLink
-      to={to}
-      component={LinkBase}
-      external={false}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        marginLeft: '8px',
-        marginRight: '8px',
-        height: '40px',
-        opacity: 0.5,
-      }}
-      activeStyle={{ opacity: 1 }}
-    >
-      <span style={{ display: 'block', padding: '1%', fontSize: '17px' }}>{title}</span>
-    </NavLink>
-  );
-}
-
-export default NavBar;
+export default Nav;
