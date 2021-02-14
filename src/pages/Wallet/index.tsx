@@ -26,6 +26,9 @@ import { DollarPool4 } from "../../constants/contracts";
 import Container from "../../components/Container";
 import Row from "../../components/Row";
 
+//Style
+import "./style.css";
+
 function Wallet({ user }: { user: string }) {
   const { override } = useParams();
   if (override) {

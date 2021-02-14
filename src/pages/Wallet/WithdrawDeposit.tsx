@@ -4,7 +4,6 @@ import BigNumber from "bignumber.js";
 
 //Components
 import BalanceBlock from "../../components/BalanceBlock";
-import Container from "../../components/Container";
 import MaxButton from "../../components/MaxButton";
 import Button from "../../components/Button";
 import BigNumberInput from "../../components/BigNumInput";
@@ -15,6 +14,7 @@ import { isPos, toBaseUnitBN } from "../../utils/number";
 //Constants
 import { ESD, ESDS } from "../../constants/tokens";
 import { MAX_UINT256 } from "../../constants/values";
+import TableCell from "../../components/TableCell";
 
 //Icons
 
@@ -109,27 +109,19 @@ function WithdrawDeposit({
           </div>
         </div>
       ) : (
-        <div>
+        <TableCell>
           {/* total Issued */}
-          <div>
-            <BalanceBlock
-              asset="Staged"
-              balance={stagedBalance}
-              suffix={"ESD"}
-            />
-          </div>
-          <div />
+          <BalanceBlock asset="Staged" balance={stagedBalance} suffix={"ESD"} />
           {/* Approve DAO to spend Døllar */}
-          <div>
-            <Button
-              title="Approve"
-              onClick={() => {
-                approve(ESD.addr, ESDS.addr);
-              }}
-              disabled={user === ""}
-            />
-          </div>
-        </div>
+
+          <Button
+            title="Approve"
+            onClick={() => {
+              approve(ESD.addr, ESDS.addr);
+            }}
+            disabled={user === ""}
+          />
+        </TableCell>
       )}
     </div>
   );

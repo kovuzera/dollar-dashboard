@@ -1,0 +1,20 @@
+button {
+  width: 150px;
+  cursor: pointer;
+  display: inline-block;
+  background-color: transparent;
+  border: 0;
+  margin-left: auto;
+}
+
+button:focus {
+  outline: none;
+}
+
+button span {
+  padding: 12px 32px;
+  font-size: 22px;
+  border: 2px solid var(--green);
+  color: var(--green);
+  border-radius: 6px;
+}

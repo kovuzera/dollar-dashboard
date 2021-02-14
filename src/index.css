@@ -15,6 +15,7 @@
 
 body {
   background: var(--black);
+  background-position-y: -100;
   color: var(--green);
   font-family: "Share Tech Mono", monospace;
   font-size: 18px;
