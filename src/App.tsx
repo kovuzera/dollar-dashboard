@@ -7,7 +7,7 @@ import { storePreference, getPreference } from "./utils/storage";
 
 //Components
 import Container from "./components/Container";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import Footer from "./components/Footer";
 /* import NavBar from "./components/backup-components/NavBar";
 import HomePage from "./components/backup-components/HomePage";

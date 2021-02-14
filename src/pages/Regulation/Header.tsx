@@ -4,8 +4,11 @@ import BigNumber from "bignumber.js";
 
 //Components
 import Container from "../../components/Container";
+import { Card } from "../../components/Card";
 
 import { formatMoney, ownership } from "../../utils/number";
+
+declare var items: any
 
 type RegulationHeaderProps = {
   totalSupply: BigNumber;
@@ -49,12 +52,14 @@ const RegulationHeader = ({
     .minus(daoTotalSupply)
     .minus(poolTotalSupply)
     .minus(legacyPoolTotalSupply);
+    
 
   return (
     <>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
         <div style={{ flexBasis: "25%", marginRight: "2%" }}>
           <div>
+          <Card title="coisas né" subtitle="regulation history" item={items}/>
             {/*  <Distribution
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
               items={[
