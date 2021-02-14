@@ -36,21 +36,21 @@ function ConnectModal({ visible, onClose, onConnect }: ConnectModalProps) {
     <div /* visible={visible} */ /* onClose={onClose} */>
       <p>Select a wallet provider</p>
 
-      <div style={{ width: "50%", margin: "auto", padding: "1%" }}>
+      <div>
         <Button
           title="Metamask"
           icon={`./wallets/metamask-fox.svg`}
           onClick={connectMetamask}
         />
       </div>
-      <div style={{ width: "50%", margin: "auto", padding: "1%" }}>
+      <div>
         <Button
           title={"WalletConnect"}
           icon={`./wallets/wallet-connect.svg`}
           onClick={connectWalletConnect}
         />
       </div>
-      <div style={{ width: "50%", margin: "auto", padding: "1%" }}>
+      <div>
         <Button
           title={"Coinbase Wallet"}
           icon={`./wallets/coinbase-wallet.png`}

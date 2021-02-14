@@ -33,13 +33,13 @@ function BondUnbond({
   return (
     <Container>
       <>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div>
           {/* Total bonded */}
-          <div style={{ flexBasis: "16%" }}>
+          <div>
             <BalanceBlock asset="Bonded" balance={bonded} suffix={"UNI-V2"} />
           </div>
           {/* Exit lockup */}
-          <div style={{ flexBasis: "16%" }}>
+          <div>
             <TextBlock
               label="Exit Lockup"
               text={
@@ -52,9 +52,9 @@ function BondUnbond({
             />
           </div>
           {/* Bond UNI-V2 within Pool */}
-          <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "60%", minWidth: "6em" }}>
+          <div>
+            <div>
+              <div>
                 <>
                   <BigNumberInput
                     adornment="UNI-V2"
@@ -68,7 +68,7 @@ function BondUnbond({
                   />
                 </>
               </div>
-              <div style={{ width: "40%", minWidth: "7em" }}>
+              <div>
                 <Button
                   /*   wide
                 icon={status === 0 ? <IconCirclePlus /> : <IconCaution />} */
@@ -80,16 +80,16 @@ function BondUnbond({
                       (hash) => setBondAmount(new BigNumber(0))
                     );
                   }}
-                  /*  disabled={poolAddress === "" || !isPos(bondAmount)} */
+                  disabled={poolAddress === "" || !isPos(bondAmount)}
                 />
               </div>
             </div>
           </div>
-          <div style={{ flexBasis: "2%" }} />
+          <div />
           {/* Unbond UNI-V2 within Pool */}
-          <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "60%", minWidth: "6em" }}>
+          <div>
+            <div>
+              <div>
                 <>
                   <BigNumberInput
                     adornment="UNI-V2"
@@ -103,7 +103,7 @@ function BondUnbond({
                   />
                 </>
               </div>
-              <div style={{ width: "40%", minWidth: "7em" }}>
+              <div>
                 <Button
                   /*  wide
                 icon={status === 0 ? <IconCircleMinus /> : <IconCaution />} */
@@ -115,16 +115,14 @@ function BondUnbond({
                       (hash) => setUnbondAmount(new BigNumber(0))
                     );
                   }}
-                  /*   disabled={poolAddress === "" || !isPos(unbondAmount)} */
+                  disabled={poolAddress === "" || !isPos(unbondAmount)}
                 />
               </div>
             </div>
           </div>
         </div>
-        <div style={{ width: "100%", paddingTop: "2%", textAlign: "center" }}>
-          <span style={{ opacity: 0.5 }}>
-            Bonding events will restart the lockup timer{" "}
-          </span>
+        <div>
+          <span>Bonding events will restart the lockup timer </span>
         </div>
       </>
     </Container>

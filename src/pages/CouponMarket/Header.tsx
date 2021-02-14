@@ -23,35 +23,28 @@ const CouponMarketHeader = ({
   premium,
   redeemable,
 }: CouponMarketHeaderProps) => (
-  <div
-    style={{
-      padding: "2%",
-      display: "flex",
-      flexWrap: "wrap",
-      alignItems: "center",
-    }}
-  >
-    <div style={{ flexBasis: "20%" }}>
+  <div>
+    <div>
       <BalanceBlock
         asset="Debt Ratio"
         balance={ownership(debt, supply)}
         suffix={"%"}
       />
     </div>
-    <div style={{ flexBasis: "20%" }}>
+    <div>
       <BalanceBlock asset="Total Debt" balance={debt} suffix={"ESD"} />
     </div>
-    <div style={{ flexBasis: "20%" }}>
+    <div>
       <BalanceBlock asset="Coupons" balance={coupons} />
     </div>
-    <div style={{ flexBasis: "20%" }}>
+    <div>
       <BalanceBlock
         asset="Premium"
         balance={premium.multipliedBy(100)}
         suffix={"%"}
       />
     </div>
-    <div style={{ flexBasis: "20%" }}>
+    <div>
       <BalanceBlock asset="Redeemable" balance={redeemable} />
     </div>
   </div>

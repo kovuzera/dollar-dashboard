@@ -37,23 +37,21 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
   const toggleModal = () => setModalOpen(!isModalOpen);
 
   return status === "connected" ? (
-    <div style={{ display: "flex" }}>
-      <div style={{ flex: "1" }} />
+    <div>
+      <div />
       <div>
         <Container>
           <>
-            <div style={{ display: "flex" }}>
+            <div>
               <div>
                 <Link href="#" onClick={disconnectWeb3}>
                   <BsPower />
                 </Link>
               </div>
-              <div style={{ flex: "1", textAlign: "right" }}>
-                {/*   <IdentityBadge entity={user} /> */}
-              </div>
+              <div>{/*   <IdentityBadge entity={user} /> */}</div>
             </div>
-            <div style={{ display: "flex" }}>
-              <div style={{ flex: "1", textAlign: "right" }}>
+            <div>
+              <div>
                 <TotalBalance user={user} />
               </div>
             </div>
@@ -71,8 +69,8 @@ function ConnectButton({ hasWeb3, user, setUser }: connectButtonProps) {
       <Button
         /*  icon={<IconConnect />} */
         title="Connect"
-        onClick={toggleModal} /* 
-        disabled={!hasWeb3} */
+        onClick={toggleModal}
+        disabled={!hasWeb3}
       />
     </>
   );

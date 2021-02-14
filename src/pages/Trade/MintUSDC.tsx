@@ -21,23 +21,23 @@ function MintUSDC({ user, userBalanceUSDC }: MintUSDCProps) {
 
   return (
     <Container>
-      <div style={{ display: "flex" }}>
+      <div>
         {/* USDC balance */}
-        <div style={{ width: "30%" }}>
+        <div>
           <BalanceBlock asset="USDC Balance" balance={userBalanceUSDC} />
         </div>
         {/* Mint */}
-        <div style={{ width: "38%" }} />
-        <div style={{ width: "32%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "60%" }}>
+        <div />
+        <div>
+          <div>
+            <div>
               <BigNumberInput
                 adornment="USDC"
                 value={mintAmount}
                 setter={setMintAmount}
               />
             </div>
-            <div style={{ width: "40%" }}>
+            <div>
               <Button
                 /*   wide
                 icon={<IconCirclePlus />} */
@@ -45,7 +45,7 @@ function MintUSDC({ user, userBalanceUSDC }: MintUSDCProps) {
                 onClick={() => {
                   mintTestnetUSDC(toBaseUnitBN(mintAmount, USDC.decimals));
                 }}
-                /*  disabled={user === "" || !isPos(mintAmount)} */
+                disabled={user === "" || !isPos(mintAmount)}
               />
             </div>
           </div>

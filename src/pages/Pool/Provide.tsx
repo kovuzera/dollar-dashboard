@@ -64,29 +64,28 @@ function Provide({
   return (
     <Container>
       <>
-        {" "}
         {userUSDCAllowance.comparedTo(MAX_UINT256.dividedBy(2)) > 0 ? (
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div>
             {/* total rewarded */}
-            <div style={{ flexBasis: "32%" }}>
+            <div>
               <BalanceBlock
                 asset="Rewarded"
                 balance={rewarded}
                 suffix={"ESD"}
               />
             </div>
-            <div style={{ flexBasis: "33%" }}>
+            <div>
               <BalanceBlock
                 asset="USDC Balance"
                 balance={userUSDCBalance}
                 suffix={"USDC"}
               />
             </div>
-            <div style={{ flexBasis: "2%" }} />
+            <div />
             {/* Provide liquidity using Pool rewards */}
-            <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
-              <div style={{ display: "flex" }}>
-                <div style={{ width: "60%", minWidth: "6em" }}>
+            <div>
+              <div>
+                <div>
                   <>
                     <BigNumberInput
                       adornment="ESD"
@@ -106,7 +105,7 @@ function Provide({
                     />
                   </>
                 </div>
-                <div style={{ width: "40%", minWidth: "6em" }}>
+                <div>
                   <Button
                     /*                   wide
                   icon={<IconArrowUp />} */
@@ -118,37 +117,37 @@ function Provide({
                         (hash) => setProvideAmount(new BigNumber(0))
                       );
                     }}
-                    /* disabled={
-                    poolAddress === "" ||
-                    status !== 0 ||
-                    !isPos(provideAmount) ||
-                    usdcAmount.isGreaterThan(userUSDCBalance)
-                  } */
+                    disabled={
+                      poolAddress === "" ||
+                      status !== 0 ||
+                      !isPos(provideAmount) ||
+                      usdcAmount.isGreaterThan(userUSDCBalance)
+                    }
                   />
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div>
             {/* total rewarded */}
-            <div style={{ flexBasis: "32%" }}>
+            <div>
               <BalanceBlock
                 asset="Rewarded"
                 balance={rewarded}
                 suffix={"ESD"}
               />
             </div>
-            <div style={{ flexBasis: "33%" }}>
+            <div>
               <BalanceBlock
                 asset="USDC Balance"
                 balance={userUSDCBalance}
                 suffix={"USDC"}
               />
             </div>
-            <div style={{ flexBasis: "2%" }} />
+            <div />
             {/* Approve Pool to spend USDC */}
-            <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
+            <div>
               <Button
                 /*      wide
               icon={<IconCirclePlus />} */
@@ -156,16 +155,13 @@ function Provide({
                 onClick={() => {
                   approve(USDC.addr, poolAddress);
                 }}
-                /*       disabled={poolAddress === "" || user === ""} */
+                disabled={poolAddress === "" || user === ""}
               />
             </div>
           </div>
         )}
-        <div style={{ width: "100%", paddingTop: "2%", textAlign: "center" }}>
-          <span style={{ opacity: 0.5 }}>
-            {" "}
-            Zap your rewards directly to LP by providing more USDC{" "}
-          </span>
+        <div>
+          <span>Zap your rewards directly to LP by providing more USDC</span>
         </div>
       </>
     </Container>

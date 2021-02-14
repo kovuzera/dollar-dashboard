@@ -49,7 +49,6 @@ function HomePage({ user }: HomePageProps) {
     updateUserInfo();
     const id = setInterval(updateUserInfo, 1000);
 
-    // eslint-disable-next-line consistent-return
     return () => {
       isCancelled = true;
       clearInterval(id);
@@ -74,6 +73,10 @@ function HomePage({ user }: HomePageProps) {
             <img src={LogoGif} alt="Control Loop"></img>
           </div>
         </div>
+        <p className="effect-phrase">
+          <strong>Out tools:</strong> Our work is to to bridge you and useful
+          work tools.
+        </p>
       </div>
     </>
   );

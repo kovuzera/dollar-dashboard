@@ -22,14 +22,14 @@ const VOTE_TYPE_MAP = ["Undecided", "Approve", "Reject"];
 function Vote({ candidate, stake, vote, status }: VoteProps) {
   return (
     <Container>
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "20%" }}>
+      <div>
+        <div>
           <BalanceBlock asset="My Stake" balance={stake} suffix={"ESDS"} />
         </div>
-        <div style={{ width: "20%" }}>
+        <div>
           <TextBlock label="My Vote" text={VOTE_TYPE_MAP[vote]} />
         </div>
-        <div style={{ width: "18%", paddingTop: "2%" }}>
+        <div>
           <Button
             /*   wide
             icon={<IconRotateLeft />} */
@@ -37,11 +37,11 @@ function Vote({ candidate, stake, vote, status }: VoteProps) {
             onClick={() => {
               recordVote(ESDS.addr, candidate, 0);
             }}
-            /* disabled={status === 1 || vote === 0 || stake.isZero()} */
+            disabled={status === 1 || vote === 0 || stake.isZero()}
           />
         </div>
-        <div style={{ width: "3%" }} />
-        <div style={{ width: "18%", paddingTop: "2%" }}>
+        <div />
+        <div>
           <Button
             /*  wide
             icon={<IconCircleCheck />} */
@@ -49,13 +49,13 @@ function Vote({ candidate, stake, vote, status }: VoteProps) {
             onClick={() => {
               recordVote(ESDS.addr, candidate, 1);
             }}
-            /*  disabled={status === 1 || vote === 1 || stake.isZero()} */
+            disabled={status === 1 || vote === 1 || stake.isZero()}
           />
         </div>
 
-        <div style={{ width: "3%" }} />
-        <div style={{ width: "18%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
+        <div />
+        <div>
+          <div>
             <Button
               /*  wide
               icon={<IconProhibited />} */
@@ -63,7 +63,7 @@ function Vote({ candidate, stake, vote, status }: VoteProps) {
               onClick={() => {
                 recordVote(ESDS.addr, candidate, 2);
               }}
-              /*  disabled={status === 1 || vote === 2 || stake.isZero()} */
+              disabled={status === 1 || vote === 2 || stake.isZero()}
             />
           </div>
         </div>

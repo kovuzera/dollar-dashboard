@@ -18,12 +18,12 @@ type AdvanceEpochProps = {
 function AdvanceEpoch({ user, epoch, epochTime }: AdvanceEpochProps) {
   return (
     <Container>
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "30%" }}>
+      <div>
+        <div>
           <NumberBlock title="Epoch (from current time)" num={epochTime} />
         </div>
-        <div style={{ width: "40%" }} />
-        <div style={{ width: "30%", paddingTop: "2%" }}>
+        <div />
+        <div>
           <Button
             /*  wide
             icon={<IconCirclePlus />} */
@@ -31,7 +31,7 @@ function AdvanceEpoch({ user, epoch, epochTime }: AdvanceEpochProps) {
             onClick={() => {
               advance(ESDS.addr);
             }}
-            /* disabled={user === "" || epoch >= epochTime} */
+            disabled={user === "" || epoch >= epochTime}
           />
         </div>
       </div>

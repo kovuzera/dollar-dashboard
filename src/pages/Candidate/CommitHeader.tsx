@@ -14,14 +14,14 @@ const CommitHeader = ({
   startEpoch,
   periodEpoch,
 }: CommitHeaderProps) => (
-  <div style={{ padding: "2%", display: "flex", alignItems: "center" }}>
-    <div style={{ width: "25%" }}>
+  <div>
+    <div>
       <NumberBlock title="Epoch" num={epoch} />
     </div>
-    <div style={{ width: "25%" }}>
+    <div>
       <NumberBlock title="Starts" num={startEpoch} />
     </div>
-    <div style={{ width: "25%" }}>
+    <div>
       <NumberBlock title="Period" num={periodEpoch} />
     </div>
   </div>

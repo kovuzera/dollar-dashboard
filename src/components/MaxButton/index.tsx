@@ -6,9 +6,9 @@ export interface MaxButtonProps {
 
 const MaxButton: React.SFC<MaxButtonProps> = ({ onClick }) => {
   return (
-    <div style={{ padding: 3 }}>
+    <div>
       <button onClick={() => onClick}>
-        <span style={{ opacity: 0.5 }}> Max </span>
+        <span> Max </span>
       </button>
     </div>
   );

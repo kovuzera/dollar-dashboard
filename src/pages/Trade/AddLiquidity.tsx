@@ -104,15 +104,15 @@ function AddLiquidity({
 
   return (
     <Container>
-      <div style={{ display: "flex" }}>
+      <div>
         {/* Pool Status */}
-        <div style={{ width: "30%" }}>
+        <div>
           <BalanceBlock asset="USDC Balance" balance={userBalanceUSDC} />
         </div>
         {/* Add liquidity to pool */}
-        <div style={{ width: "70%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "35%", marginRight: "5%" }}>
+        <div>
+          <div>
+            <div>
               <>
                 <BigNumberInput
                   adornment="ESD"
@@ -126,7 +126,7 @@ function AddLiquidity({
                 />
               </>
             </div>
-            <div style={{ width: "35%", marginRight: "5%" }}>
+            <div>
               <BigNumberInput
                 adornment="USDC"
                 value={amountUSDC}
@@ -138,7 +138,7 @@ function AddLiquidity({
                 symbol=" Pool Tokens"
               />
             </div>
-            <div style={{ width: "30%" }}>
+            <div>
               <Button
                 /*   wide
                 icon={<IconCirclePlus />} */

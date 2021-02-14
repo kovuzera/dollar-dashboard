@@ -62,9 +62,9 @@ function UniswapBuySell({
 
   return (
     <Container>
-      <div style={{ display: "flex" }}>
+      <div>
         {/* total Issued */}
-        <div style={{ width: "30%" }}>
+        <div>
           <BalanceBlock
             asset="Døllar Balance"
             balance={userBalanceESD}
@@ -72,21 +72,19 @@ function UniswapBuySell({
           />
         </div>
         {/* Buy Token from Uniswap */}
-        <div style={{ width: "32%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "60%" }}>
-              <>
-                <BigNumberInput
-                  adornment="ESD"
-                  value={buyAmount}
-                  setter={(value) => {
-                    setBuyAmount(value);
-                    isPos(value) ? updateCost(value) : updateCost("0");
-                  }}
-                />
-              </>
+        <div>
+          <div>
+            <div>
+              <BigNumberInput
+                adornment="ESD"
+                value={buyAmount}
+                setter={(value) => {
+                  setBuyAmount(value);
+                  isPos(value) ? updateCost(value) : updateCost("0");
+                }}
+              />
             </div>
-            <div style={{ width: "40%" }}>
+            <div>
               <Button
                 /*   wide
                 icon={<IconCirclePlus />} */
@@ -102,11 +100,11 @@ function UniswapBuySell({
           </div>
           <PriceSection label="Cost: " amt={cost} symbol=" USDC" />
         </div>
-        <div style={{ width: "6%" }} />
+        <div />
         {/* Sell Token on Uniswap */}
-        <div style={{ width: "32%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "60%" }}>
+        <div>
+          <div>
+            <div>
               <>
                 <BigNumberInput
                   adornment="ESD"
@@ -129,7 +127,7 @@ function UniswapBuySell({
                 />
               </>
             </div>
-            <div style={{ width: "40%" }}>
+            <div>
               <Button
                 /*    wide
                 icon={<IconCircleMinus />} */

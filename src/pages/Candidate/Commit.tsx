@@ -58,14 +58,14 @@ function Commit({
 
   return (
     <Container>
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "30%" }}>
+      <div>
+        <div>
           <TextBlock label="Status" text={s} />
         </div>
-        <div style={{ width: "40%" }} />
+        <div />
 
-        <div style={{ width: "30%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
+        <div>
+          <div>
             <Button
               /*  wide
               icon={<IconUpload />} */
@@ -73,7 +73,7 @@ function Commit({
               onClick={() => {
                 commit(ESDS.addr, candidate);
               }}
-              /*  disabled={user === "" || s !== "Approved"} */
+              disabled={user === "" || s !== "Approved"}
             />
           </div>
         </div>

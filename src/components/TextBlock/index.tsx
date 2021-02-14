@@ -9,8 +9,8 @@ type TextBlockProps = {
 function TextBlock({ label, text }: TextBlockProps) {
   return (
     <>
-      <div style={{ fontSize: 16, padding: 3 }}>{label}</div>
-      <div style={{ fontSize: 24, padding: 3 }}>{text}</div>
+      <div>{label}</div>
+      <div>{text}</div>
     </>
   );
 }

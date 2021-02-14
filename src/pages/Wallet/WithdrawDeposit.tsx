@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-//Components
 import BigNumber from "bignumber.js";
+
+//Components
 import BalanceBlock from "../../components/BalanceBlock";
 import Container from "../../components/Container";
 import MaxButton from "../../components/MaxButton";
 import Button from "../../components/Button";
-
+import BigNumberInput from "../../components/BigNumInput";
 //Utils
 import { approve, deposit, withdraw } from "../../utils/web3";
 import { isPos, toBaseUnitBN } from "../../utils/number";
@@ -36,11 +37,11 @@ function WithdrawDeposit({
   const [withdrawAmount, setWithdrawAmount] = useState(new BigNumber(0));
 
   return (
-    <Container>
+    <div>
       {allowance.comparedTo(MAX_UINT256) === 0 ? (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div>
           {/* total Issued */}
-          <div style={{ flexBasis: "32%" }}>
+          <div>
             <BalanceBlock
               asset="Staged"
               balance={stagedBalance}
@@ -48,24 +49,22 @@ function WithdrawDeposit({
             />
           </div>
           {/* Deposit Døllar into DAO */}
-          <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "60%", minWidth: "6em" }}>
-                <>
-                  {/*      <BigNumberInput
-                    adornment="ESD"
-                    value={depositAmount}
-                    setter={setDepositAmount}
-                    disabled={status !== 0}
-                  /> */}
-                  <MaxButton
-                    onClick={() => {
-                      setDepositAmount(balance);
-                    }}
-                  />
-                </>
+          <div>
+            <div>
+              <div>
+                <BigNumberInput
+                  adornment="ESD"
+                  value={depositAmount}
+                  setter={setDepositAmount}
+                  disabled={status !== 0}
+                />
+                <MaxButton
+                  onClick={() => {
+                    setDepositAmount(balance);
+                  }}
+                />
               </div>
-              <div style={{ width: "40%", minWidth: "6em" }}>
+              <div>
                 <Button
                   title="Deposit"
                   onClick={() => {
@@ -83,21 +82,19 @@ function WithdrawDeposit({
           <div>
             <div>
               <div>
-                <>
-                  {/*   <BigNumberInput
-                    adornment="ESD"
-                    value={withdrawAmount}
-                    setter={setWithdrawAmount}
-                    disabled={status !== 0}
-                  /> */}
-                  <MaxButton
-                    onClick={() => {
-                      setWithdrawAmount(stagedBalance);
-                    }}
-                  />
-                </>
+                <BigNumberInput
+                  adornment="ESD"
+                  value={withdrawAmount}
+                  setter={setWithdrawAmount}
+                  disabled={status !== 0}
+                />
+                <MaxButton
+                  onClick={() => {
+                    setWithdrawAmount(stagedBalance);
+                  }}
+                />
               </div>
-              <div style={{ width: "40%", minWidth: "7em" }}>
+              <div>
                 <Button
                   title="Withdraw"
                   onClick={() => {
@@ -112,31 +109,29 @@ function WithdrawDeposit({
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div>
           {/* total Issued */}
-          <div style={{ flexBasis: "32%" }}>
+          <div>
             <BalanceBlock
               asset="Staged"
               balance={stagedBalance}
               suffix={"ESD"}
             />
           </div>
-          <div style={{ flexBasis: "35%" }} />
+          <div />
           {/* Approve DAO to spend Døllar */}
-          <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
+          <div>
             <Button
-              /*   wide
-              icon={<IconCirclePlus />} */
               title="Approve"
               onClick={() => {
                 approve(ESD.addr, ESDS.addr);
-              }} /* 
-              disabled={user === ""} */
+              }}
+              disabled={user === ""}
             />
           </div>
         </div>
       )}
-    </Container>
+    </div>
   );
 }
 

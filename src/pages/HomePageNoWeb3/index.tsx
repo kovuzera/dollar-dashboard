@@ -1,9 +1,12 @@
 import React from "react";
 
+//Components
+import Button from "../../components/Button";
+
 function HomePageNoWeb3() {
   return (
     <>
-      <div style={{ padding: "1%", display: "flex", alignItems: "center" }}>
+      <div>
         <MainButton
           title="No web3 wallet detected"
           description="Click to get Metamask."
@@ -34,25 +37,14 @@ function MainButton({
   tag,
 }: MainButtonPropx) {
   return (
-    /*     <LinkBase onClick={onClick} style={{ width: '100%' }}>
-      <Box>
-        <div style={{ padding: 10, fontSize: 18 }}>
-          {title}
-          {tag ? <Tag>{tag}</Tag> : <></>}
-        </div>
-        <span style={{ fontSize: 48 }}>
-          {icon}
-        </span>
-       <img alt="icon" style={{ padding: 10, height: 64 }} src={iconUrl} />
-        <div style={{ paddingTop: 5, opacity: 0.5 }}>
-          {' '}
-          {description}
-          {' '}
-        </div>
-
-      </Box>
-    </LinkBase> */
-    <h1>po conecta ai pf</h1>
+    <Button onClick={onClick} title={title}>
+      <div>
+        <div>{tag ? <p>{tag}</p> : <></>}</div>
+        <span>{icon}</span>
+        <img alt="icon" src={icon} />
+        <div> {description} </div>
+      </div>
+    </Button>
   );
 }
 

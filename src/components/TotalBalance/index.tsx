@@ -122,18 +122,7 @@ function TotalBalance({ user }: TotalBalanceProps) {
     };
   }, [user]);
 
-  return (
-    <div
-      style={{
-        fontSize: 14,
-        padding: 3,
-        fontWeight: 400,
-        lineHeight: 1.5,
-      }}
-    >
-      ∅{formatBN(totalBalance, 2)}
-    </div>
-  );
+  return <div>∅{formatBN(totalBalance, 2)}</div>;
 }
 
 export default TotalBalance;

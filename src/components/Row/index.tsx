@@ -11,7 +11,7 @@ const Row: React.SFC<RowProps> = ({ title, children }) => {
   return (
     <div className="Row">
       <h2>{title}</h2>
-      {children}
+      <div className="row-content">{children}</div>
     </div>
   );
 };

@@ -47,15 +47,15 @@ function RemoveLiquidity({
 
   return (
     <Container>
-      <div style={{ display: "flex" }}>
+      <div>
         {/* Pool Token in Hold */}
-        <div style={{ width: "30%" }}>
+        <div>
           <BalanceBlock asset="Pair Token Balance" balance={userBalanceUNI} />
         </div>
         {/* Remove */}
-        <div style={{ width: "70%", paddingTop: "2%" }}>
-          <div style={{ display: "flex" }}>
-            <div style={{ width: "35%", marginRight: "5%" }}>
+        <div>
+          <div>
+            <div>
               <BigNumberInput
                 adornment="UNI-V2"
                 value={withdrawAmountUNI}
@@ -63,7 +63,7 @@ function RemoveLiquidity({
               />
               <MaxButton onClick={() => setWithdrawAmountUNI(userBalanceUNI)} />
             </div>
-            <div style={{ width: "35%", marginRight: "5%" }}>
+            <div>
               <>
                 <PriceSection
                   label="You get "
@@ -77,7 +77,7 @@ function RemoveLiquidity({
                 />
               </>
             </div>
-            <div style={{ width: "30%" }}>
+            <div>
               <Button
                 /*    wide
                 icon={<IconCircleMinus />} */

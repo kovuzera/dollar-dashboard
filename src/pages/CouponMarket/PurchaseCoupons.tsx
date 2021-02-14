@@ -46,36 +46,34 @@ function PurchaseCoupons({
   return (
     <Container>
       {allowance.comparedTo(MAX_UINT256) === 0 ? (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          <div style={{ flexBasis: "30%" }}>
+        <div>
+          <div>
             <BalanceBlock asset={`Balance`} balance={balance} suffix={" ESD"} />
           </div>
-          <div style={{ flexBasis: "38%" }} />
-          <div style={{ flexBasis: "32%", paddingTop: "2%" }}>
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "60%", minWidth: "6em" }}>
-                <>
-                  <BigNumberInput
-                    adornment="ESD"
-                    value={purchaseAmount}
-                    setter={(value) => {
-                      setPurchaseAmount(value);
-                      isPos(value)
-                        ? updatePremium(value)
-                        : updatePremium(new BigNumber(0));
-                    }}
-                  />
-                  <MaxButton
-                    onClick={() => {
-                      const maxPurchaseAmount =
-                        debt.comparedTo(balance) > 0 ? balance : debt;
-                      setPurchaseAmount(maxPurchaseAmount);
-                      updatePremium(maxPurchaseAmount);
-                    }}
-                  />
-                </>
+          <div />
+          <div>
+            <div>
+              <div>
+                <BigNumberInput
+                  adornment="ESD"
+                  value={purchaseAmount}
+                  setter={(value) => {
+                    setPurchaseAmount(value);
+                    isPos(value)
+                      ? updatePremium(value)
+                      : updatePremium(new BigNumber(0));
+                  }}
+                />
+                <MaxButton
+                  onClick={() => {
+                    const maxPurchaseAmount =
+                      debt.comparedTo(balance) > 0 ? balance : debt;
+                    setPurchaseAmount(maxPurchaseAmount);
+                    updatePremium(maxPurchaseAmount);
+                  }}
+                />
               </div>
-              <div style={{ width: "40%", minWidth: "6em" }}>
+              <div>
                 <Button
                   /*  wide
                   icon={<IconCircleMinus />} */
@@ -86,12 +84,12 @@ function PurchaseCoupons({
                       toBaseUnitBN(purchaseAmount, ESD.decimals)
                     );
                   }}
-                  /*   disabled={
+                  disabled={
                     user === "" ||
                     debt.isZero() ||
                     balance.isZero() ||
                     !isPos(purchaseAmount)
-                  } */
+                  }
                 />
               </div>
             </div>
@@ -99,12 +97,12 @@ function PurchaseCoupons({
           </div>
         </div>
       ) : (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          <div style={{ flexBasis: "30%" }}>
+        <div>
+          <div>
             <BalanceBlock asset={`Døllar Balance`} balance={balance} />
           </div>
-          <div style={{ flexBasis: "40%" }} />
-          <div style={{ flexBasis: "30%", paddingTop: "2%" }}>
+          <div />
+          <div>
             <Button
               /*   wide
               icon={<IconCirclePlus />} */
@@ -112,7 +110,7 @@ function PurchaseCoupons({
               onClick={() => {
                 approve(ESD.addr, ESDS.addr);
               }}
-              /*   disabled={user === ""} */
+              disabled={user === ""}
             />
           </div>
         </div>

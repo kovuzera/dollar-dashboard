@@ -51,15 +51,8 @@ function UniswapPool({ user }: { user: string }) {
         uniswapPair={UNI.addr}
       />
 
-      <div
-        style={{
-          padding: "1%",
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-        }}
-      >
-        <div style={{ flexBasis: "30%", marginRight: "3%", marginLeft: "2%" }}>
+      <div>
+        <div>
           <MainButton
             title="Info"
             description="View ESD-USDC pool stats."
@@ -70,7 +63,7 @@ function UniswapPool({ user }: { user: string }) {
           />
         </div>
 
-        <div style={{ flexBasis: "30%" }}>
+        <div>
           <MainButton
             title="Trade"
             description="Trade døllar tokens."
@@ -81,7 +74,7 @@ function UniswapPool({ user }: { user: string }) {
           />
         </div>
 
-        <div style={{ flexBasis: "30%", marginLeft: "3%", marginRight: "2%" }}>
+        <div>
           <MainButton
             title="Supply"
             description="Supply and redeem liquidity."
@@ -108,10 +101,9 @@ function MainButton({ title, description, icon, href }: MainButtonProps) {
     <Link href={href}>
       <Container>
         <div>
-          <div style={{ padding: 10, fontSize: 18 }}>{title}</div>
-          <span style={{ fontSize: 48 }}>{icon}</span>
-          {/*<img alt="icon" style={{ padding: 10, height: 64 }} src={iconUrl} />*/}
-          <div style={{ paddingTop: 5, opacity: 0.5 }}> {description} </div>
+          <div>{title}</div>
+          <span>{icon}</span>
+          <div> {description} </div>
         </div>
       </Container>
     </Link>

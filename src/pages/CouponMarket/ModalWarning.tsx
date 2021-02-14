@@ -1,31 +1,20 @@
-/* import React, { useState } from "react";
-import {
-  Modal,
-  Button,
-  useTheme,
-} from "../backup-components/Candidate/node_modules/@aragon/ui";
-import { getPreference, storePreference } from "../../../utils/storage";
-import { COUPON_EXPIRATION } from "../../../constants/values";
+import React, { useState } from "react";
+import { getPreference, storePreference } from "../../utils/storage";
+import { COUPON_EXPIRATION } from "../../constants/values";
+
+//Components
+import Button from "../../components/Button";
 
 function ModalWarning() {
   const storedShowWarning = getPreference("showCouponWarning", "1");
   const [showWarning, setShowWarning] = useState(storedShowWarning === "1");
-  const theme = useTheme();
 
   return (
-    <Modal visible={showWarning} closeButton={false}>
-      <div style={{ width: "100%" }}>
-        <div style={{ fontSize: 24, padding: 3, color: theme.warning }}>
-          Warning
-        </div>
+    <div /* visible={showWarning} closeButton={false} */>
+      <div>
+        <div>Warning</div>
 
-        <div
-          style={{
-            marginLeft: "3%",
-            fontSize: 16,
-            padding: 5,
-          }}
-        >
+        <div>
           <div>
             Coupons will only become redeemable during the next supply
             expansion. Each expansionary epoch, a tranche of rewards are
@@ -36,20 +25,12 @@ function ModalWarning() {
             forfeited.
           </div>
 
-          <div
-            style={{
-              padding: 10,
-              textAlign: "center",
-              color: theme.warningSurfaceContent,
-            }}
-          >
-            Coupon premiums and redemption timing are not guaranteed.
-          </div>
+          <div>Coupon premiums and redemption timing are not guaranteed.</div>
         </div>
 
-        <div style={{ textAlign: "right" }}>
+        <div>
           <Button
-            label={"I understand"}
+            title={"I understand"}
             onClick={() => {
               storePreference("showCouponWarning", "0");
               setShowWarning(false);
@@ -57,19 +38,8 @@ function ModalWarning() {
           />
         </div>
       </div>
-    </Modal>
+    </div>
   );
 }
 
 export default ModalWarning;
- */
-
-import * as React from "react";
-
-export interface ModlWarnngProps {}
-
-const ModlWarnng: React.SFC<ModlWarnngProps> = () => {
-  return <h1>ModlWarnngProps</h1>;
-};
-
-export default ModlWarnng;

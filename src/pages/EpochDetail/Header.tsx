@@ -10,14 +10,14 @@ type AccountPageHeaderProps = {
 };
 
 const EpochPageHeader = ({ epoch, epochTime }: AccountPageHeaderProps) => (
-  <div style={{ padding: "2%", display: "flex", alignItems: "center" }}>
-    <div style={{ width: "25%" }}>
+  <div>
+    <div>
       <NumberBlock title="Current" num={epoch} />
     </div>
-    <div style={{ width: "25%" }}>
+    <div>
       <NumberBlock title="Available" num={epochTime} />
     </div>
-    <div style={{ width: "25%" }}>
+    <div>
       <TextBlock label="Period" text={epoch < 106 ? "24 hours" : "8 hours"} />
     </div>
   </div>

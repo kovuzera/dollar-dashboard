@@ -24,32 +24,25 @@ const GovernanceHeader = ({
   accountStatus,
   implementation,
 }: GovernanceHeaderProps) => (
-  <div
-    style={{
-      padding: "2%",
-      display: "flex",
-      flexWrap: "wrap",
-      alignItems: "center",
-    }}
-  >
-    <div style={{ flexBasis: "25%" }}>
+  <div>
+    <div>
       <BalanceBlock
         asset="DAO Ownership"
         balance={ownership(stake, totalStake)}
         suffix="%"
       />
     </div>
-    <div style={{ flexBasis: "25%" }}>
+    <div>
       <BalanceBlock
         asset="Proposal Threshold"
         balance={GOVERNANCE_PROPOSAL_THRESHOLD.multipliedBy(100)}
         suffix="%"
       />
     </div>
-    <div style={{ flexBasis: "25%" }}>
+    <div>
       <TextBlock label="Status" text={STATUS_MAP[accountStatus]} />
     </div>
-    <div style={{ flexBasis: "25%" }}>
+    <div>
       <AddressBlock label="Implementation" address={implementation} />
     </div>
   </div>

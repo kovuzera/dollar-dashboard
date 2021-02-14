@@ -22,10 +22,10 @@ function UniswapApprovePoolToken({
 }: UniswapApprovePoolTokenProps) {
   return (
     <Container>
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "73%" }} />
+      <div>
+        <div />
         {/* Approve Uniswap Router to spend UNI */}
-        <div style={{ width: "27%", paddingTop: "2%" }}>
+        <div>
           <Button
             /*   wide
             icon={<IconCirclePlus />} */
@@ -33,10 +33,10 @@ function UniswapApprovePoolToken({
             onClick={() => {
               approve(UNI.addr, UniswapV2Router02);
             }}
-            /*  disabled={
+            disabled={
               user === "" ||
               userAllowanceUNI.comparedTo(MAX_UINT256.dividedBy(2)) > 0
-            } */
+            }
           />
         </div>
       </div>

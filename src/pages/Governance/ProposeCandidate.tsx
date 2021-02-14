@@ -9,14 +9,6 @@ import { canPropose } from "../../utils/gov";
 //Components
 import Container from "../../components/Container";
 import Button from "../../components/Button";
-import TextBlock from "../../components/TextBlock";
-import BalanceBlock from "../../components/BalanceBlock";
-import IconHeader from "../../components/IconHeader";
-import PriceSection from "../../components/PriceSection";
-import MaxButton from "../../components/MaxButton";
-import BigNumberInput from "../../components/BigNumInput";
-import CheckBox from "../../components/CheckBox";
-import AddressBlock from "../../components/AddressBlock";
 
 type ProposeCandidateProps = {
   user: string;
@@ -39,9 +31,9 @@ function ProposeCandidate({
 
   return (
     <Container>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <div>
         {/* User balance */}
-        <div style={{ flexBasis: "62%", paddingTop: "2%" }}>
+        <div>
           <>
             <input
               type="text"
@@ -56,9 +48,9 @@ function ProposeCandidate({
             ></input>
           </>
         </div>
-        <div style={{ flexBasis: "6%" }} />
+        <div />
         {/* Purchase coupons */}
-        <div style={{ flexBasis: "32%", paddingTop: "2%" }}>
+        <div>
           <Button
             /*  wide
             icon={<IconToken />} */
@@ -70,12 +62,12 @@ function ProposeCandidate({
                 1 // APPROVE
               );
             }}
-            /*      disabled={
+            disabled={
               user === "" ||
               !canPropose(stake, totalStake) ||
               !plausibleCandidate(candidate) ||
               accountStatus === 1
-            } */
+            }
           />
         </div>
       </div>

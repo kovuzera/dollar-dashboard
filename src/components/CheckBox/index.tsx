@@ -11,7 +11,7 @@ function MyCheckBox({ text, checked, onCheck }: checkBoxProps) {
   return (
     <CheckBoxWrapper>
       <input type="checkbox" checked={checked} onChange={() => onCheck}></input>
-      <span style={{ margin: "4px" }}>{text}</span>
+      <span>{text}</span>
       <br />
     </CheckBoxWrapper>
   );

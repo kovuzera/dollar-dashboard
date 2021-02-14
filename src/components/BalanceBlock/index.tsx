@@ -3,6 +3,9 @@ import React from "react";
 import BigNumber from "bignumber.js";
 import { formatBN } from "../../utils/number";
 
+//Style
+import "./style.css";
+
 type BlanceBlockProps = {
   asset: string;
   balance: BigNumber | string | number;
@@ -20,14 +23,13 @@ function BalanceBlock({ asset, balance, suffix = "" }: BlanceBlockProps) {
   }
 
   return (
-    <>
-      <div style={{ fontSize: 14, padding: 3 }}>{asset}</div>
-      <div style={{ padding: 3 }}>
-        <span style={{ fontSize: 24 }}>{integer}</span>.
-        <span style={{ fontSize: 18 }}> {digits} </span>
-        {suffix === "" ? "" : <span style={{ fontSize: 18 }}>{suffix}</span>}
+    <div className="BalanceBlock">
+      <h3>{asset}</h3>
+      <div className="balance-value">
+        <span>{integer}</span>.<span> {digits} </span>
+        {suffix === "" ? "" : <span>{suffix}</span>}
       </div>
-    </>
+    </div>
   );
 }
 

@@ -12,8 +12,8 @@ function NumberBlock({ title, num }: NumberBlockProps) {
 
   return (
     <>
-      <div style={{ fontSize: 14, padding: 3 }}>{title}</div>
-      <div style={{ fontSize: 24, padding: 3 }}>{numNum}</div>
+      <div>{title}</div>
+      <div>{numNum}</div>
     </>
   );
 }

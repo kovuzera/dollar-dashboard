@@ -154,9 +154,9 @@ function CouponMarket({ user }: { user: string }) {
         debt={debt}
       />
 
-      <div style={{ display: "flex" }}>
+      <div>
         <p>Coupons</p>
-        <div style={{ marginLeft: "auto", alignSelf: "flex-end" }}>
+        <div>
           <CheckBox
             text="Hide Redeemed"
             onCheck={(checked) => {

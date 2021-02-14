@@ -24,10 +24,10 @@ function UniswapApproveCollateral({
 }: UniswapApproveCollateralProps) {
   return (
     <Container>
-      <div style={{ display: "flex" }}>
-        <div style={{ width: "40%" }} />
+      <div>
+        <div />
         {/* Approve Uniswap Router to spend ESD */}
-        <div style={{ width: "27%", paddingTop: "2%" }}>
+        <div>
           <Button
             /*   wide
             icon={<IconCirclePlus />} */
@@ -35,14 +35,14 @@ function UniswapApproveCollateral({
             onClick={() => {
               approve(ESD.addr, UniswapV2Router02);
             }}
-            /*   disabled={
+            disabled={
               user === "" || userAllowanceESD.comparedTo(MAX_UINT256) === 0
-            } */
+            }
           />
         </div>
         {/* Approve Uniswap Router to spend USDC */}
-        <div style={{ width: "6%" }} />
-        <div style={{ width: "27%", paddingTop: "2%" }}>
+        <div />
+        <div>
           <Button
             /*  wide
             icon={<IconCirclePlus />} */
@@ -50,10 +50,10 @@ function UniswapApproveCollateral({
             onClick={() => {
               approve(USDC.addr, UniswapV2Router02);
             }}
-            /*     disabled={
+            disabled={
               user === "" ||
               userAllowanceUSDC.comparedTo(MAX_UINT256.dividedBy(2)) > 0
-            } */
+            }
           />
         </div>
       </div>

@@ -52,8 +52,8 @@ const RegulationHeader = ({
 
   return (
     <>
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        <div style={{ flexBasis: "25%", marginRight: "2%" }}>
+      <div>
+        <div>
           <div>
             {/*  <Distribution
               heading={`∅${formatMoney(totalSupply.toNumber())}`}
@@ -81,7 +81,7 @@ const RegulationHeader = ({
             <p>coisas ne</p>
           </div>
         </div>
-        <div style={{ flexBasis: "25%", marginRight: "2%" }}>
+        <div>
           <div>
             {/*     <Distribution
               heading={`∅${formatMoney(daoTotalSupply.toNumber())}`}
@@ -109,7 +109,7 @@ const RegulationHeader = ({
             <p>coisas ne</p>
           </div>
         </div>
-        <div style={{ flexBasis: "25%" }}>
+        <div>
           <div>
             {/*       <Distribution
               heading={`∅${formatMoney(poolTotalSupply.toNumber())}`}

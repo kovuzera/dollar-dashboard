@@ -23,10 +23,9 @@ function Claim({ poolAddress, claimable, status }: ClaimProps) {
   return (
     <Container>
       <>
-        {" "}
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div>
           {/* total Issued */}
-          <div style={{ flexBasis: "32%" }}>
+          <div>
             <BalanceBlock
               asset="Claimable"
               balance={claimable}
@@ -34,10 +33,10 @@ function Claim({ poolAddress, claimable, status }: ClaimProps) {
             />
           </div>
           {/* Deposit UNI-V2 into Pool */}
-          <div style={{ flexBasis: "35%" }} />
-          <div style={{ flexBasis: "33%", paddingTop: "2%" }}>
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "60%", minWidth: "6em" }}>
+          <div />
+          <div>
+            <div>
+              <div>
                 <>
                   <BigNumberInput
                     adornment="ESD"
@@ -52,7 +51,7 @@ function Claim({ poolAddress, claimable, status }: ClaimProps) {
                   />
                 </>
               </div>
-              <div style={{ width: "40%", minWidth: "6em" }}>
+              <div>
                 <Button
                   /*    wide
                 icon={<IconArrowDown />} */
@@ -64,17 +63,17 @@ function Claim({ poolAddress, claimable, status }: ClaimProps) {
                       (hash) => setClaimAmount(new BigNumber(0))
                     );
                   }}
-                  /*  disabled={
-                  poolAddress === "" || status !== 0 || !isPos(claimAmount)
-                } */
+                  disabled={
+                    poolAddress === "" || status !== 0 || !isPos(claimAmount)
+                  }
                 />
               </div>
             </div>
           </div>
         </div>
-        <div style={{ width: "100%", paddingTop: "2%", textAlign: "center" }}>
-          <span style={{ opacity: 0.5 }}>
-            Unbond to make rewards claimable after your status is Unlocked{" "}
+        <div>
+          <span>
+            Unbond to make rewards claimable after your status is Unlocked
           </span>
         </div>
       </>

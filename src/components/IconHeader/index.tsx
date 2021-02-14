@@ -8,8 +8,8 @@ type IconHeaderProps = {
 function IconHeader({ icon, text }: IconHeaderProps) {
   return (
     <>
-      <div style={{ padding: "1%", display: "flex", alignItems: "center" }}>
-        <div style={{ marginRight: "2%", fontSize: 48 }}>{icon}</div>
+      <div>
+        <div>{icon}</div>
         <div>
           <p>text</p>
         </div>

@@ -116,7 +116,7 @@ function Wallet({ user }: { user: string }) {
   return (
     <Container>
       <>
-        <Row title="Dao">
+        <Row title="DAO">
           <AccountPageHeader
             accountESDBalance={userESDBalance}
             accountESDSBalance={userESDSBalance}
@@ -128,7 +128,7 @@ function Wallet({ user }: { user: string }) {
           />
         </Row>
 
-        <Row title="Stage">
+        <Row title="STAGE">
           <WithdrawDeposit
             user={user}
             balance={userESDBalance}
@@ -138,7 +138,7 @@ function Wallet({ user }: { user: string }) {
           />
         </Row>
 
-        <Row title="Bond">
+        <Row title="BOND">
           <BondUnbond
             staged={userStagedBalance}
             bonded={userBondedBalance}

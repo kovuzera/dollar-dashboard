@@ -36,14 +36,14 @@ const VoteHeader = ({
   totalStake,
   showParticipation,
 }: VoteHeaderProps) => (
-  <div style={{ padding: "2%", display: "flex", alignItems: "center" }}>
-    <div style={{ width: "25%" }}>
+  <div>
+    <div>
       <BalanceBlock asset="Approve" balance={approveFor} suffix={"ESDS"} />
     </div>
-    <div style={{ width: "25%" }}>
+    <div>
       <BalanceBlock asset="Reject" balance={rejectFor} suffix={"ESDS"} />
     </div>
-    <div style={{ width: "25%" }}>
+    <div>
       <BalanceBlock
         asset="Approval"
         balance={approval(approveFor, rejectFor)}
@@ -51,7 +51,7 @@ const VoteHeader = ({
       />
     </div>
     {showParticipation ? (
-      <div style={{ width: "25%" }}>
+      <div>
         <BalanceBlock
           asset="Participation"
           balance={participation(approveFor, rejectFor, totalStake)}

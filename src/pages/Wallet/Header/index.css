@@ -2,9 +2,10 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 16   px 30px;
+  padding: 16px 30px;
 }
 
 ul li {
   list-style: none;
+  text-align: center;
 }
