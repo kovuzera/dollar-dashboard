@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom"; /* 
-import EpochBlock from "../common/EpochBlock"; */
+import { useHistory } from "react-router-dom";
 
 //Assets
 import LogoGif from "../../assets/logo/wgreeninfinite.gif";
+
+//Components
 import Button from "../../components/Button";
 
 //Styles
@@ -57,83 +58,6 @@ function HomePage({ user }: HomePageProps) {
 
   return (
     <>
-      {/*     <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '68%' }} />
-        <div style={{ flexBasis: '30%', flexGrow: 1, marginRight: '2%', textAlign: 'right'}}>
-          <Box>
-            <EpochBlock epoch={epochTime}/>
-          </Box>
-        </div>
-      </div>
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%'  }}>
-          <MainButton
-            title="DAO"
-            description="Earn rewards for governing"
-            icon={<i className="fas fa-dot-circle"/>}
-            onClick={() => {
-              history.push('/dao/');
-            }}
-          />
-        </div>
-
-        <div style={{ flexBasis: '30%' }}>
-          <MainButton
-            title="LP Rewards"
-            description="Earn rewards for providing liquidity."
-            icon={<i className="fas fa-parachute-box"/>}
-            onClick={() => {
-              history.push('/pool/');
-            }}
-          />
-        </div>
-
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%' }}>
-          <MainButton
-            title="Regulation"
-            description="Network supply regulation statistics."
-            icon={<i className="fas fa-chart-area"/>}
-            onClick={() => {
-              history.push('/regulation/');
-            }}
-          />
-        </div>
-      </div>
-      <div style={{ padding: '1%', display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
-        <div style={{ flexBasis: '30%', marginRight: '3%', marginLeft: '2%' }}>
-          <MainButton
-            title="Governance"
-            description="Vote on upgrades."
-            icon={<i className="fas fa-poll"/>}
-            onClick={() => {
-              history.push('/governance/');
-            }}
-          />
-        </div>
-
-        <div style={{ flexBasis: '30%' }}>
-          <MainButton
-            title="Trade"
-            description="Trade døllar tokens."
-            icon={<i className="fas fa-exchange-alt"/>}
-            onClick={() => {
-              history.push('/trade/');
-            }}
-          />
-        </div>
-
-        <div style={{ flexBasis: '30%', marginLeft: '3%', marginRight: '2%'  }}>
-          <MainButton
-            title="Coupons"
-            description="Purchase and redeem coupons."
-            icon={<i className="fas fa-ticket-alt"/>}
-            onClick={() => {
-              history.push('/coupons/');
-            }}
-          />
-        </div>
-      </div> */}
-
       <div className="Home">
         <div className="button-row">
           <Button title="Connect"></Button>
@@ -152,37 +76,6 @@ function HomePage({ user }: HomePageProps) {
         </div>
       </div>
     </>
-  );
-}
-
-type MainButtonPropx = {
-  title: string;
-  description: string;
-  icon: any;
-  onClick: Function;
-  tag?: string;
-};
-
-function MainButton({
-  title,
-  description,
-  icon,
-  onClick,
-  tag,
-}: MainButtonPropx) {
-  return (
-    <h1>eh nois q ta</h1>
-    /*  <LinkBase onClick={onClick} style={{ width: "100%" }}>
-      <Box>
-        <div style={{ padding: 10, fontSize: 18 }}>
-          {title}
-          {tag ? <Tag>{tag}</Tag> : <></>}
-        </div>
-        <span style={{ fontSize: 48 }}>{icon}</span> */
-    /*   {<img alt="icon" style={{ padding: 10, height: 64 }} src={iconUrl} />/}*
-  {/*       <div style={{ paddingTop: 5, opacity: 0.5 }}> {description} </div>
-      </Box>
-    </LinkBase> }*/
   );
 }
 
