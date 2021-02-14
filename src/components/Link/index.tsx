@@ -9,4 +9,4 @@ const StyledLink: React.SFC<LinkProps> = ({ href }) => {
   return <Link to={href}></Link>;
 };
 
-export default Link;
+export default StyledLink;

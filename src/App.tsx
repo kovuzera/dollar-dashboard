@@ -28,10 +28,10 @@ import Wallet from "./pages/Wallet";
 import Pool from "./pages/Pool";
 import EpochDetail from "./pages/EpochDetail";
 import Regulation from "./pages/Regulation";
-import CouponMarket from "./pages/Trade";
-import Candidate from "./pages/Trade";
+import CouponMarket from "./pages/CouponMarket";
+import Candidate from "./pages/Candidate";
 import Trade from "./pages/Trade";
-import Governance from "./pages/Trade";
+import Governance from "./pages/Governance";
 
 function App() {
   const storedTheme = getPreference("theme", "light");
@@ -88,53 +88,7 @@ function App() {
                 <Route path="/dao/:override">
                   <Wallet user={user} />
                 </Route>
-                <Route path="/dao/">
-                  <Wallet user={user} />
-                </Route>
-                <Route exact path="/epoch/">
-                  <EpochDetail user={user} />
-                </Route>
-                <Route path="/coupons/:override">
-                  <CouponMarket user={user} />
-                </Route>
-                <Route path="/coupons/">
-                  <CouponMarket user={user} />
-                </Route>
-                <Route path="/governance/candidate/:candidate">
-                  <Candidate user={user} />
-                </Route>
-                <Route path="/governance/">
-                  <Governance user={user} />
-                </Route>
-                <Route path="/trade/">
-                  <Trade user={user} />
-                </Route>
 
-                <Route path="/pool/:override">
-                  <Pool user={user} />
-                </Route>
-                <Route exact path="/regulation/">
-                  <Regulation user={user} />
-                </Route>
-                <Route exact path="/pool/">
-                  <Pool user={user} />
-                </Route>
-              </Switch>
-            </>
-          </Container>
-        </>
-        {/*   <Main
-          assetsUrl={`${process.env.PUBLIC_URL}/aragon-ui/`}
-          theme={theme}
-          layout={false}
-        >
-          <NavBar hasWeb3={hasWeb3} user={user} setUser={setUser} />
-          <Layout>
-            {hasWeb3 ? (
-              <Switch>
-                <Route path="/dao/:override">
-                  <Wallet user={user} />
-                </Route>
                 <Route path="/dao/">
                   <Wallet user={user} />
                 </Route>
@@ -165,21 +119,10 @@ function App() {
                 <Route path="/pool/">
                   <Pool user={user} />
                 </Route>
-                <Route path="/">
-                  <HomePage user={user} />
-                </Route>
               </Switch>
-            ) : (
-              <Switch>
-                <Route path="/">
-                  <HomePageNoWeb3 />
-                </Route>
-              </Switch>
-            )}
-          </Layout>
-          <div style={{ height: "128px", width: "100%" }} />
-          <Footer hasWeb3={hasWeb3} theme={theme} updateTheme={updateTheme} />
-        </Main> */}
+            </>
+          </Container>
+        </>
         <Footer />
       </UseWalletProvider>
     </Router>

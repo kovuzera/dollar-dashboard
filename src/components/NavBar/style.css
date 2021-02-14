@@ -1,6 +1,11 @@
 .Navbar {
   border-bottom: 1px solid var(--green);
   padding: 32px 96px;
+  position: fixed;
+  background: var(--black);
+  width: 100%;
+  top: 0;
+  z-index: 1;
 }
 
 .ascii-art {

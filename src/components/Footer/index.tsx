@@ -74,6 +74,9 @@ import { AiFillGithub, AiFillMediumCircle } from "react-icons/ai";
 //Styles
 import "./index.css";
 
+//Components
+import Link from "../../components/Link";
+
 export interface FooterProps {}
 
 const Footer: React.SFC<FooterProps> = () => {
@@ -85,9 +88,9 @@ const Footer: React.SFC<FooterProps> = () => {
       </div>
 
       <div className="links-container">
-        <a href="#">App</a>
-        <a href="#">Help</a>
-        <a href="#">Faq</a>
+        <Link href="/app">App</Link>
+        <Link href="/help">Help</Link>
+        <Link href="/faq">Faq</Link>
       </div>
 
       <div className="social-media-icons-container">
