@@ -131,7 +131,6 @@ function CouponMarket({ user }: { user: string }) {
   return (
     <>
       <ModalWarning />
-      {console.log("oi")}
 
       <IconHeader
         icon={<i className="fas fa-ticket-alt" />}
