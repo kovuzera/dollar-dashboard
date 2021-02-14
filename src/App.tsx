@@ -27,6 +27,11 @@ import HomePage from "./pages/Home";
 import Wallet from "./pages/Wallet";
 import Pool from "./pages/Pool";
 import EpochDetail from "./pages/EpochDetail";
+import Regulation from "./pages/Regulation";
+import CouponMarket from "./pages/Trade";
+import Candidate from "./pages/Trade";
+import Trade from "./pages/Trade";
+import Governance from "./pages/Trade";
 
 function App() {
   const storedTheme = getPreference("theme", "light");
@@ -86,10 +91,10 @@ function App() {
                 <Route path="/dao/">
                   <Wallet user={user} />
                 </Route>
-                <Route path="/epoch/">
+                <Route exact path="/epoch/">
                   <EpochDetail user={user} />
                 </Route>
-                {/*    <Route path="/coupons/:override">
+                <Route path="/coupons/:override">
                   <CouponMarket user={user} />
                 </Route>
                 <Route path="/coupons/">
@@ -104,13 +109,14 @@ function App() {
                 <Route path="/trade/">
                   <Trade user={user} />
                 </Route>
-                <Route path="/regulation/">
-                  <Regulation user={user} />
-                </Route>
+
                 <Route path="/pool/:override">
                   <Pool user={user} />
-                </Route> */}
-                <Route path="/pool/">
+                </Route>
+                <Route exact path="/regulation/">
+                  <Regulation user={user} />
+                </Route>
+                <Route exact path="/pool/">
                   <Pool user={user} />
                 </Route>
               </Switch>
