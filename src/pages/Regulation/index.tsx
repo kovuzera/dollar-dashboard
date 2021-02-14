@@ -137,6 +137,8 @@ function Regulation({ user }: { user: string }) {
     };
   }, [user]);
 
+  console.log(totalSupply);
+
   return (
     <>
       <IconHeader

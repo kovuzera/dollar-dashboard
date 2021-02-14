@@ -115,7 +115,8 @@ function WithdrawDeposit({
           {/* Approve DAO to spend Døllar */}
 
           <Button
-            title="Approve"
+            title="+ Approve"
+            className="wide"
             onClick={() => {
               approve(ESD.addr, ESDS.addr);
             }}

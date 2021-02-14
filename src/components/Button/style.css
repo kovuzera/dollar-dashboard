@@ -18,3 +18,16 @@ button span {
   color: var(--green);
   border-radius: 6px;
 }
+
+button.wide {
+  width: 500px;
+  margin: 50px 0;
+}
+
+button.wide span {
+  font-size: 40px;
+  padding: 20px 60px;
+}
+
+button img {
+}

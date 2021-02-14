@@ -1,3 +1,9 @@
+.BalanceBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .BalanceBlock h3 {
   font-size: 30px;
   font-style: normal;

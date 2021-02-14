@@ -10,6 +10,10 @@ import { isPos, toBaseUnitBN } from "../../utils/number";
 import { ESD, ESDS } from "../../constants/tokens";
 import TextBlock from "../../components/TextBlock";
 import BigNumberInput from "../../components/BigNumInput";
+import TableCell from "../../components/TableCell";
+
+//Style
+import "./style.css";
 
 type BondUnbondProps = {
   staged: BigNumber;
@@ -23,81 +27,80 @@ function BondUnbond({ staged, bonded, status, lockup }: BondUnbondProps) {
   const [unbondAmount, setUnbondAmount] = useState(new BigNumber(0));
 
   return (
-    <div>
-      <div>
+    <div className="BoundUnbount">
+      <TableCell>
         {/* Total bonded */}
-        <div>
-          <BalanceBlock asset="Bonded" balance={bonded} suffix={"ESD"} />
-        </div>
+        <BalanceBlock asset="Bonded" balance={bonded} suffix={"ESD"} />{" "}
+        <TextBlock
+          label="Exit Lockup"
+          text={
+            lockup === 0 ? "" : lockup === 1 ? "1 epoch" : `${lockup} epochs`
+          }
+        />
         {/* Total bonded */}
-        <div>
-          <TextBlock
-            label="Exit Lockup"
-            text={
-              lockup === 0 ? "" : lockup === 1 ? "1 epoch" : `${lockup} epochs`
-            }
-          />
-        </div>
         {/* Bond Døllar within DAO */}
         <div>
-          <div>
-            <div>
-              <BigNumberInput
-                adornment="ESD"
-                value={bondAmount}
-                setter={setBondAmount}
-              />
-              <MaxButton
-                onClick={() => {
-                  setBondAmount(staged);
-                }}
-              />
-            </div>
-            <div>
-              <Button
-                title="Bond"
-                onClick={() => {
-                  bond(ESDS.addr, toBaseUnitBN(bondAmount, ESD.decimals));
-                }}
-              />
-            </div>
+          <div className="input-submit">
+            <BigNumberInput
+              adornment="ESD"
+              value={bondAmount}
+              setter={setBondAmount}
+            />
+            <Button
+              title="+ Bond"
+              className="bold"
+              onClick={() => {
+                bond(ESDS.addr, toBaseUnitBN(bondAmount, ESD.decimals));
+              }}
+              disabled={
+                status === 2 ||
+                !isPos(bondAmount) ||
+                bondAmount.isGreaterThan(staged)
+              }
+            />
           </div>
+          <div>
+            <MaxButton
+              onClick={() => {
+                setBondAmount(staged);
+              }}
+            />
+          </div>
+          <span>Bonding events will restart the lockup timer</span>
         </div>
         <div />
         {/* Unbond Døllar within DAO */}
         <div>
+          <div className="input-submit">
+            <BigNumberInput
+              adornment="ESD"
+              value={unbondAmount}
+              setter={setUnbondAmount}
+            />
+            <Button
+              title="Unbond"
+              onClick={() => {
+                unbondUnderlying(
+                  ESDS.addr,
+                  toBaseUnitBN(unbondAmount, ESD.decimals)
+                );
+              }}
+              disabled={
+                status === 2 ||
+                !isPos(unbondAmount) ||
+                unbondAmount.isGreaterThan(bonded)
+              }
+            />
+          </div>
           <div>
-            <div>
-              <>
-                <BigNumberInput
-                  adornment="ESD"
-                  value={unbondAmount}
-                  setter={setUnbondAmount}
-                />
-                <MaxButton
-                  onClick={() => {
-                    setUnbondAmount(bonded);
-                  }}
-                />
-              </>
-            </div>
-            <div>
-              <Button
-                title="Unbond"
-                onClick={() => {
-                  unbondUnderlying(
-                    ESDS.addr,
-                    toBaseUnitBN(unbondAmount, ESD.decimals)
-                  );
-                }}
-              />
-            </div>
+            <MaxButton
+              onClick={() => {
+                setUnbondAmount(bonded);
+              }}
+            />
           </div>
         </div>
-      </div>
-      <div>
-        <span>Bonding events will restart the lockup timer</span>
-      </div>
+      </TableCell>
     </div>
   );
 }

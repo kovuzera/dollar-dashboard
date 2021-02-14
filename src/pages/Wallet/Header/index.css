@@ -2,7 +2,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 16px 30px;
+  padding: 16px 0;
 }
 
 ul li {

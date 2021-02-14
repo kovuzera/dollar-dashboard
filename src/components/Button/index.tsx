@@ -7,7 +7,7 @@ export interface ButtonProps {
   onClick?: Function;
   icon?: string;
   disabled?: boolean;
-  flexBasis?: number;
+  className?: string;
 }
 
 const Button: React.SFC<ButtonProps> = ({
@@ -15,10 +15,14 @@ const Button: React.SFC<ButtonProps> = ({
   onClick,
   icon,
   disabled,
-  flexBasis,
+  className,
 }) => {
   return (
-    <button onClick={() => onClick} disabled={disabled}>
+    <button
+      onClick={() => onClick}
+      disabled={disabled}
+      className={className ? className : ""}
+    >
       <img src={icon}></img>
       <span>{title}</span>
     </button>
